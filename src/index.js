@@ -11,7 +11,11 @@ import * as serviceWorker from './serviceWorker';
 ReactDOM.render(
     <App 
       stories={store.getState().storyState}
-      onArchive={id => store.dispatch({ type: STORY_ARCHIVE, id })}
+      onArchive={id => {
+        store.dispatch({ type: STORY_ARCHIVE, id })
+        console.log(store.getState().storyState)
+        console.log(store.getState().archiveState)
+      }}
     />,
     document.getElementById('root')
 );
