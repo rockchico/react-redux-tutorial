@@ -20,8 +20,8 @@ function render() {
       stories={ getReadableStories(store.getState().storyState, store.getState().archiveState) }
       onArchive={id => {
         store.dispatch({ type: STORY_ARCHIVE, id })
-        console.log(store.getState().storyState)
-        console.log(store.getState().archiveState)
+        //console.log(store.getState().storyState)
+        //console.log(store.getState().archiveState)
       }}
     />,
     document.getElementById('root')
