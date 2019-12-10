@@ -13,7 +13,9 @@ console.log(store.getState().storyState)
 console.log("initial state archiveState")
 console.log(store.getState().archiveState)
 
-ReactDOM.render(
+function render() {
+    
+  ReactDOM.render(
     <App 
       stories={ getReadableStories(store.getState().storyState, store.getState().archiveState) }
       onArchive={id => {
@@ -23,7 +25,11 @@ ReactDOM.render(
       }}
     />,
     document.getElementById('root')
-);
+  )
+}
+
+store.subscribe(render);
+render();
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
