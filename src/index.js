@@ -4,7 +4,7 @@ import './index.css';
 import App from './components/App';
 import store from './store';
 import { getReadableStories } from './selectors/story';
-import { STORY_ARCHIVE } from './constants/actionTypes';
+import { doArchiveStory } from './actions/archive';
 import * as serviceWorker from './serviceWorker';
 
 console.log("initial state storyState")
@@ -19,7 +19,7 @@ function render() {
     <App 
       stories={ getReadableStories(store.getState().storyState, store.getState().archiveState) }
       onArchive={id => {
-        store.dispatch({ type: STORY_ARCHIVE, id })
+        store.dispatch(doArchiveStory(id))
         //console.log(store.getState().storyState)
         //console.log(store.getState().archiveState)
       }}
