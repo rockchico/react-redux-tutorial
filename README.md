@@ -1,8 +1,12 @@
 ### `Tutorial`
 
-Open [https://www.robinwieruch.de/react-redux-tutorial](https://www.robinwieruch.de/react-redux-tutorial) to view it in the browser.
-
-
+1 [https://www.robinwieruch.de/react-redux-tutorial](https://www.robinwieruch.de/react-redux-tutorial)
+2 [https://flaviocopes.com/redux-saga/](https://flaviocopes.com/redux-saga/)
+https://flaviocopes.com/redux-saga/
+https://flaviocopes.com/es6/
+https://flaviocopes.com/javascript-generators/
+https://redux-saga.js.org/
+https://medium.com/dailyjs/a-simple-guide-to-understanding-javascript-es6-generators-d1c350551950
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
