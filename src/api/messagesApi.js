@@ -30,7 +30,7 @@ const ApiDeleteMessage = (params) => {
   //.catch(err => console.log(err));
 }
 
-const ApiGetMessages = () => {
+const ApiFetchAllMessages = () => {
   
   //console.log(params.id)
 
@@ -48,5 +48,5 @@ export {
   ApiAddMessage,
   ApiUpdateMessage,
   ApiDeleteMessage,
-  ApiGetMessages
+  ApiFetchAllMessages
 };
