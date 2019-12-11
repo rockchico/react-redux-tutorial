@@ -4,7 +4,7 @@ import { doArchiveStory } from '../actions/archive';
 
 import './Message.css';
 
-const Story = ({ message_elm, columns }) => {
+const Message = ({ message_elm, columns }) => {
   const {
     id,
     author,
@@ -26,10 +26,12 @@ const Story = ({ message_elm, columns }) => {
   );
 }
 
-const mapDispatchToProps = dispatch => ({
-  onArchive: id => dispatch(doArchiveStory(id)),
-});
-export default connect(
-  null,
-  mapDispatchToProps
-)(Story);
+//const mapDispatchToProps = dispatch => ({
+//  onArchive: id => dispatch(doArchiveStory(id)),
+//});
+//export default connect(
+//  null,
+//  mapDispatchToProps
+//)(Story);
+
+export default Message;

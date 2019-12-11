@@ -26,7 +26,7 @@ const applyAddMessageError = (state, action) => ({
   error: action.error,
 });
 
-function storyReducer(state = INITIAL_STATE, action) {
+function messageReducer(state = INITIAL_STATE, action) {
     switch(action.type) {
       
       case ACTIONS.MESSAGE_FETCHALL : {
@@ -49,4 +49,4 @@ function storyReducer(state = INITIAL_STATE, action) {
     }
 }
 
-export default storyReducer;
+export default messageReducer;

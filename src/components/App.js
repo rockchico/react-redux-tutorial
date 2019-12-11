@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import Stories from './Stories';
 import SearchStories from './SearchStories';
 import AddStory from './AddStory';
+import Messages from './Messages';
 
 
 
@@ -12,7 +12,7 @@ const App = () =>
       <AddStory />
       <SearchStories />
     </div>
-    <Stories />
+    <Messages />
   </div>
 
   

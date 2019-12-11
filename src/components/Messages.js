@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getReadableStories, getFetchError } from '../selectors/story';
+import { getFetchError } from '../selectors/messageSelector';
 
 import './Messages.css';
 import Message from './Message';
@@ -21,6 +21,9 @@ const COLUMNS = {
 };
 
 const Messages = ({ messages, error }) =>
+  
+  
+
   <div className="stories">
     <div className="stories-header">
       {Object.keys(COLUMNS).map(key =>
@@ -34,7 +37,7 @@ const Messages = ({ messages, error }) =>
     </div>
 
     { error && <p className="error">Something went wrong ...</p> }
-    
+
     {(messages || []).map(message =>
       <Message
         key={message.id}
@@ -45,7 +48,7 @@ const Messages = ({ messages, error }) =>
   </div>
 
 const mapStateToProps = state => ({
-  messages: state.messageState,
+  messages: state.messageState.messages,
   error: getFetchError(state),
 });
 

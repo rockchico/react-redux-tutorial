@@ -14,6 +14,9 @@ console.log(store.getState().storyState)
 console.log("initial state archiveState")
 console.log(store.getState().archiveState)
 
+console.log("initial state messageState")
+console.log(store.getState().messageState)
+
 ReactDOM.render(
   <Provider store={store}>
     <App />
