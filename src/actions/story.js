@@ -21,7 +21,7 @@ const doFetchErrorStories = error => ({
 });
 
 
-const addStory = ({
+const doAddStory = (id) => ({
     type: STORY_ADD,
     story: {
         title: 'React Francisco',
@@ -29,7 +29,7 @@ const addStory = ({
         author: 'Francisco',
         num_comments: 3,
         points: 4,
-        objectID: 0,
+        objectID: id,
     },
 });
 
@@ -37,5 +37,5 @@ export {
     doAddStories,
     doFetchStories,
     doFetchErrorStories,
-    addStory
+    doAddStory
 };

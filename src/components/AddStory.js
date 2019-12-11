@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addStory } from '../actions/story';
+import { doAddStory } from '../actions/story';
 //import Button from './Button';
 
 class AddStory extends Component {
 
   handleClickAddStory = event => {
     
-    this.props.onAddStory()
+    let int = parseInt((Math.random() * 100), 10)
+    this.props.onAddStory(int)
 
   }
 
@@ -23,7 +24,7 @@ class AddStory extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-    onAddStory: () => dispatch(addStory)
+    onAddStory: (id) => dispatch(doAddStory(id))
 });
 export default connect(
     null,
