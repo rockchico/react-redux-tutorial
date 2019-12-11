@@ -1,4 +1,4 @@
-import { STORIES_ADD, STORIES_FETCH_ERROR } from '../constants/actionTypes';
+import { STORIES_ADD, STORIES_FETCH_ERROR, STORY_ADD } from '../constants/actionTypes';
 
 const INITIAL_STATE = {
   stories: [],
@@ -15,6 +15,12 @@ const applyFetchErrorStories = (state, action) => ({
   error: action.error,
 });
 
+
+const addStory = (state, action) => ({
+  stories: state.stories.concat([action.story]),
+  error: null,
+});
+
 function storyReducer(state = INITIAL_STATE, action) {
     switch(action.type) {
       
@@ -24,6 +30,10 @@ function storyReducer(state = INITIAL_STATE, action) {
 
       case STORIES_FETCH_ERROR : {
         return applyFetchErrorStories(state, action);
+      }
+
+      case STORY_ADD : {
+        return addStory(state, action)
       }
       
       default : return state;
