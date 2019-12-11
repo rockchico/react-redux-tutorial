@@ -33,7 +33,6 @@ function storyReducer(state = INITIAL_STATE, action) {
       }
 
       case STORY_ADD : {
-        var int = parseInt((Math.random() * 100), 10)
         return addStory(state, action)
       }
       
