@@ -17,6 +17,10 @@ const COLUMNS = {
     author: {
       label: 'Author',
       width: '30%',
+    },
+    del_action: {
+      label: '',
+      width: '30%',
     }
 };
 

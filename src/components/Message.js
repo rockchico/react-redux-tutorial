@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { doArchiveStory } from '../actions/archive';
+import { doDelMessageApi } from '../actions/messageActions';
 
 import './Message.css';
 
-const Message = ({ message, columns }) => {
+const Message = ({ message, columns, onDeleteMessage }) => {
   
   //console.log(message_elm)
   
@@ -28,17 +28,26 @@ const Message = ({ message, columns }) => {
       <span style={{ width: columns.message.width }}>
         {text}
       </span>
+      <span style={{ width: columns.del_action.width }}>
+        <button
+          type="button"
+          className="button-inline"
+          onClick={() => onDeleteMessage(message)}
+        >
+          Excluir
+        </button>
+      </span>
       
     </div>
   );
 }
 
-//const mapDispatchToProps = dispatch => ({
-//  onArchive: id => dispatch(doArchiveStory(id)),
-//});
-//export default connect(
-//  null,
-//  mapDispatchToProps
-//)(Story);
+const mapDispatchToProps = dispatch => ({
+  onDeleteMessage: message => dispatch(doDelMessageApi(message)),
+});
+export default connect(
+  null,
+  mapDispatchToProps
+)(Message);
 
-export default Message;
+//export default Message;

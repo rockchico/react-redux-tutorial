@@ -1,5 +1,7 @@
 import * as ACTIONS from '../constants/actionTypes';
 
+
+// Fetch All **********************
 const doFetchAllMessagesApi = () => ({
     type: ACTIONS.MESSAGE_API_FETCHALL
 });
@@ -13,8 +15,9 @@ const doFetchAllMessagesApiError = error => ({
     type: ACTIONS.MESSAGE_API_FETCHALL_ERROR,
     error,
 });
+// Fim Fetch All **********************
 
-
+// Add **********************
 const doAddMessageApi = (message) => ({
     type: ACTIONS.MESSAGE_API_ADD,
     message
@@ -29,6 +32,29 @@ const doAddMessageApiError = error => ({
     type: ACTIONS.MESSAGE_API_ADD_ERROR,
     error,
 });
+// Fim Add **********************
+
+// Del **********************
+const doDelMessageApi = (message) => ({
+    type: ACTIONS.MESSAGE_API_DELETE,
+    message
+});
+
+const doDelMessage = (message) => ({
+    type: ACTIONS.MESSAGE_DELETE,
+    message
+});
+
+const doDelMessageApiError = error => ({
+    type: ACTIONS.MESSAGE_API_DELETE_ERROR,
+    error,
+});
+// Fim Del **********************
+
+
+
+
+
 
 export {
     doFetchAllMessagesApi,
@@ -37,5 +63,10 @@ export {
 
     doAddMessageApi,
     doAddMessage,
-    doAddMessageApiError
+    doAddMessageApiError,
+
+    doDelMessageApi,
+    doDelMessage,
+    doDelMessageApiError
+
 };

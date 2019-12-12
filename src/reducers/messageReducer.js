@@ -26,6 +26,19 @@ const applyAddMessageError = (state, action) => ({
   error: action.error,
 });
 
+
+const applyDelMessage = (state, action) => ({
+  messages: state.messages.filter(message => message.id !== action.message.id),
+  error: null,
+});
+
+const applyDelMessageError = (state, action) => ({
+  messages: state.messages,
+  error: action.error,
+});
+
+
+
 function messageReducer(state = INITIAL_STATE, action) {
     switch(action.type) {
       
@@ -44,6 +57,15 @@ function messageReducer(state = INITIAL_STATE, action) {
 
       case ACTIONS.MESSAGE_API_ADD_ERROR : {
         return applyAddMessageError(state, action)
+      }
+
+      case ACTIONS.MESSAGE_DELETE : {
+        console.log(action)
+        return applyDelMessage(state, action)
+      }
+
+      case ACTIONS.MESSAGE_API_DELETE_ERROR : {
+        return applyDelMessageError(state, action)
       }
       
       default : return state;

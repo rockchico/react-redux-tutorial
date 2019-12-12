@@ -1,12 +1,13 @@
 import { takeEvery, all } from 'redux-saga/effects';
-import { STORIES_FETCH, MESSAGE_API_ADD, MESSAGE_API_FETCHALL } from '../constants/actionTypes';
+import { STORIES_FETCH, MESSAGE_API_FETCHALL, MESSAGE_API_DELETE } from '../constants/actionTypes';
 import { handleFetchStories } from './story';
-import { handleFetchAllMessages } from './messageSaga';
+import { handleFetchAllMessages, handleDeleteMessage } from './messageSaga';
 
 function *watchAll() {
   yield all([
     takeEvery(STORIES_FETCH, handleFetchStories),
     takeEvery(MESSAGE_API_FETCHALL, handleFetchAllMessages),
+    takeEvery(MESSAGE_API_DELETE, handleDeleteMessage),
   ])
 
 }

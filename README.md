@@ -9,6 +9,9 @@ https://redux-saga.js.org/
 https://medium.com/dailyjs/a-simple-guide-to-understanding-javascript-es6-generators-d1c350551950
 
 
+https://flaviocopes.com/how-to-remove-item-from-array/
+
+
 D:\Francisco\xampp\htdocs\react-redux-tutorial\src\api> json-server --watch db.json --port 3004
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

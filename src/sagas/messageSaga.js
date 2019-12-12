@@ -6,7 +6,12 @@ import {
   doFetchAllMessagesApiError,
 
   doAddMessage,
-  doAddMessageApiError
+  doAddMessageApiError,
+
+  doDelMessage,
+  doDelMessageApiError
+
+
 
  } from '../actions/messageActions';
 
@@ -33,7 +38,25 @@ function* handleFetchAllMessages(action) {
 
 }
 
+function* handleDeleteMessage(action) {
+  
+  const { message } = action;
+
+  console.log("handleDeleteMessage")
+  //console.log(message)
+  
+  try {
+    const result = yield call(ApiDeleteMessage, message);
+    //console.log(result)
+    yield put(doDelMessage(message));
+  } catch (error) {
+    yield put(doDelMessageApiError(error));
+  }
+
+}
+
 
 export {
   handleFetchAllMessages,
+  handleDeleteMessage
 };
