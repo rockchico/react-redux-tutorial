@@ -30,6 +30,7 @@ function messageReducer(state = INITIAL_STATE, action) {
     switch(action.type) {
       
       case ACTIONS.MESSAGE_FETCHALL : {
+        //console.log(action)
         return applyFetchAllMessages(state, action);
       }
 

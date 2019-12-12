@@ -1,5 +1,5 @@
 // api
-const BASE_URL = 'http://localhost:3000/messages';
+const BASE_URL = 'http://localhost:3004/messages';
 
 const ApiAddMessage = (id, message) => {
   return fetch(`${BASE_URL}/${id}`, {

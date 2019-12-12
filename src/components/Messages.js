@@ -20,32 +20,37 @@ const COLUMNS = {
     }
 };
 
-const Messages = ({ messages, error }) =>
-  
-  
+const Messages = ({ messages, error }) => {
 
-  <div className="stories">
-    <div className="stories-header">
-      {Object.keys(COLUMNS).map(key =>
-        <span
-          key={key}
-          style={{ width: COLUMNS[key].width }}
-        >
-          {COLUMNS[key].label}
-        </span>
+  //console.log(messages)
+
+  return (
+    <div className="stories">
+      <div className="stories-header">
+        {Object.keys(COLUMNS).map(key =>
+          <span
+            key={key}
+            style={{ width: COLUMNS[key].width }}
+          >
+            {COLUMNS[key].label}
+          </span>
+        )}
+      </div>
+
+      { error && <p className="error">Something went wrong ...</p> }
+
+      {(messages || []).map(message =>
+        <Message
+          key={message.id}
+          message={message}
+          columns={COLUMNS}
+        />
       )}
     </div>
-
-    { error && <p className="error">Something went wrong ...</p> }
-
-    {(messages || []).map(message =>
-      <Message
-        key={message.id}
-        message={message}
-        columns={COLUMNS}
-      />
-    )}
-  </div>
+  )
+}
+  
+  
 
 const mapStateToProps = state => ({
   messages: state.messageState.messages,

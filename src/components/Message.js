@@ -4,12 +4,19 @@ import { doArchiveStory } from '../actions/archive';
 
 import './Message.css';
 
-const Message = ({ message_elm, columns }) => {
+const Message = ({ message, columns }) => {
+  
+  //console.log(message_elm)
+  
   const {
     id,
     author,
-    message,
-  } = message_elm;
+    text,
+  } = message;
+
+
+  
+
   return (
     <div className="story">
       <span style={{ width: columns.id.width }}>
@@ -19,7 +26,7 @@ const Message = ({ message_elm, columns }) => {
         {author}
       </span>
       <span style={{ width: columns.message.width }}>
-        {message}
+        {text}
       </span>
       
     </div>

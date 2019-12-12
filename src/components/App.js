@@ -1,16 +1,16 @@
 import React from 'react';
 import './App.css';
-import SearchStories from './SearchStories';
-import AddStory from './AddStory';
+
+
 import Messages from './Messages';
+import LoadMessages from './LoadMessages';
 
 
 
 const App = () =>
   <div className="app">
     <div className="interactions">
-      <AddStory />
-      <SearchStories />
+      <LoadMessages />
     </div>
     <Messages />
   </div>
