@@ -11,7 +11,7 @@ const COLUMNS = {
       width: '10%',
     },
     message: {
-      label: 'Message',
+      label: 'Text',
       width: '40%',
     },
     author: {

@@ -15,6 +15,8 @@ import {
 
  } from '../actions/messageActions';
 
+import uuid from '../utils/uuid'
+
 import {
   ApiAddMessage,
   ApiUpdateMessage,
@@ -55,8 +57,28 @@ function* handleDeleteMessage(action) {
 
 }
 
+function* handleAddMessage(action) {
+  
+  const { message } = action;
+  //message.id = uuid();
+
+  console.log("handleAddMessage")
+  //console.log(message)
+  
+  try {
+    const result = yield call(ApiAddMessage, message);
+    //console.log(result)
+    message.id = result.id;
+    yield put(doAddMessage(message));
+  } catch (error) {
+    yield put(doDelMessageApiError(error));
+  }
+
+}
+
 
 export {
   handleFetchAllMessages,
-  handleDeleteMessage
+  handleDeleteMessage,
+  handleAddMessage
 };

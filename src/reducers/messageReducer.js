@@ -60,7 +60,7 @@ function messageReducer(state = INITIAL_STATE, action) {
       }
 
       case ACTIONS.MESSAGE_DELETE : {
-        console.log(action)
+        //console.log(action)
         return applyDelMessage(state, action)
       }
 

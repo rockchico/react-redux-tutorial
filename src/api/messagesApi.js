@@ -1,8 +1,11 @@
 // api
 const BASE_URL = 'http://localhost:3004/messages';
 
-const ApiAddMessage = (id, message) => {
-  return fetch(`${BASE_URL}/${id}`, {
+const ApiAddMessage = (message) => {
+  
+  //console.log(message)
+
+  return fetch(`${BASE_URL}/`, {
     method: 'POST',
     body: JSON.stringify(message)
   })
